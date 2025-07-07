@@ -4,3 +4,4 @@ class Solution:
         for i in range(min(len(word1),len(word2))):
             j+=word1[i]+word2[i]
         return j+word1[i+1:]+word2[i+1:]
+Link :- https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75
