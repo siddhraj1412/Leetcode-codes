@@ -15,12 +15,24 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # Initialize a frequency array of size 26 (for each letter 'a' to 'z')
         checkArr = [0] * 26
+
+        # Count frequency of each character in string s
         for char in s:
-            checkArr[ord(char) - ord('a')] += 1
+            index = ord(char) - ord('a')  # Get index between 0-25
+            checkArr[index] += 1
+
+        # Subtract frequency based on characters in string t
         for char in t:
-            checkArr[ord(char) - ord('a')] -= 1
+            index = ord(char) - ord('a')  # Get index between 0-25
+            checkArr[index] -= 1
+
+        # If any count is not 0, then s and t are not anagrams
         for count in checkArr:
             if count != 0:
                 return False
+
+        # If all counts are 0, then s and t are anagrams
         return True
+
