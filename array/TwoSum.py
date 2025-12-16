@@ -26,10 +26,11 @@
 # Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity? 
 
 class Solution:
-    def add(a,b):
-        return a+b
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range (0,len(nums)):
-            for j in range(i+1,len(nums)):
-                if(add(nums[i], nums[j])==target):
-                    return [i,j]
+        a={} 
+
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in a:
+                return [a[diff],i]
+            a[n]=i
