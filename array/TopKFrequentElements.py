@@ -1,7 +1,18 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        # Step 1: Count frequency of each number
-        freq = Counter(nums)
+        
+        count={}
+        freq=[[] for i in range(len(nums)+1)]
 
-        # Step 2: Use heapq.nlargest to get top k frequent elements
-        return heapq.nlargest(k, freq.keys(), key=freq.get)
+        for n in nums:
+            count[n]=1+count.get(n,0)
+        
+        for n,c in count.items():
+            freq[c].append(n)
+        
+        res=[]
+        for i in range(len(freq)-1,0,-1):
+            for j in freq[i]:
+                res.append(j)
+                if len(res)==k:
+                    return res
