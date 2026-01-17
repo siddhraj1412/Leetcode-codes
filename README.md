@@ -1,4 +1,4 @@
-# LeetCode Codes 🧠
+# LeetCode Codes 
 
 This repository is a **personal collection of LeetCode solutions** that I’ve solved over time.
 
